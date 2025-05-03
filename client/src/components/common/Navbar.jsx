@@ -67,11 +67,9 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="bg-white shadow-md fixed top-14  w-full z-50">
+      <nav className="bg-white shadow-md fixed top-20  w-full z-50">
         <div className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
-          <div className="lg:hidden flex items-center">
-            <Logo />
-          </div>
+          <div className="lg:hidden flex items-center">{/* <Logo /> */}</div>
 
           <ul className="hidden lg:flex gap-8 font-medium text-gray-700 items-center">
             {navLinks.map((link, index) =>

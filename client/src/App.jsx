@@ -8,6 +8,11 @@ import CoupleKundali from "./pages/CoupleKundali";
 import SadeSatiPage from "./pages/SadeSati";
 import LoveReportPage from "./pages/LoveReportPage";
 import PesonalizedKundli from "./pages/PesonalizedKundli";
+import ConsultationPage from "./pages/CallConsultancy";
+import CollaboratePage from "./pages/Collabration";
+import About from "./pages/About";
+import CustomerSupport from "./pages/CustomerSupport";
+import WeeklyHoroscope from "./components/core/horoscop/Test";
 
 const App = () => {
   return (
@@ -26,6 +31,14 @@ const App = () => {
         <Route
           path="/reports/premium-couple-kundli"
           element={<PesonalizedKundli />}
+        />
+        <Route path="/call-consultation" element={<ConsultationPage />} />
+        <Route path="/collaborations" element={<CollaboratePage />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/support" element={<CustomerSupport />} />
+        <Route
+          path="/horoscope/weekly-horoscope"
+          element={<WeeklyHoroscope />}
         />
       </Routes>
       <Footer />

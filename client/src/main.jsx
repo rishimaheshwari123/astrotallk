@@ -6,7 +6,7 @@ import { BrowserRouter } from "react-router-dom";
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <BrowserRouter>
-      <div className="mt-24">
+      <div className="mt-32">
         <App />
       </div>
     </BrowserRouter>
