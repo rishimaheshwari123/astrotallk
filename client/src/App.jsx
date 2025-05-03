@@ -3,6 +3,7 @@ import Navbar from "./components/common/Navbar";
 import Subbar from "./components/common/Subbar";
 import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
+import Footer from "./components/common/Footer";
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
       </Routes>
+      <Footer />
     </div>
   );
 };
