@@ -49,7 +49,7 @@ const HeroSection = () => {
 
                 {/* CTA Button using React Router Link */}
                 <Link
-                  to="/buy-now"
+                  to="/gemstone"
                   className="inline-block bg-white text-maroon-800 border border-maroon-800 font-bold py-3 px-8 rounded-md transition duration-300 ease-in-out hover:bg-maroon-800 hover:text-white"
                 >
                   Order Now Premium Personalised Kundli Matching →

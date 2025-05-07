@@ -5,7 +5,12 @@ import bg from "../assets/love/bg.jpg";
 import love from "../assets/love/love.jpg";
 import love2 from "../assets/love/love2.jpg";
 import last from "../assets/love/last.webp";
+import { useNavigate } from "react-router-dom";
 export default function LoveReportPage() {
+  const navitage = useNavigate();
+  const handleNavigate = () => {
+    navitage("/gemstone");
+  };
   return (
     <main className="min-h-screen bg-pink-50 relative overflow-hidden">
       {/* Hero Section */}
@@ -41,7 +46,10 @@ export default function LoveReportPage() {
               a deeper, more meaningful connection.
             </p>
 
-            <button className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-md font-bold flex items-center mx-auto md:mx-0 transition-transform hover:scale-105">
+            <button
+              onClick={handleNavigate}
+              className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-md font-bold flex items-center mx-auto md:mx-0 transition-transform hover:scale-105"
+            >
               Get My Love Report Now <Heart className="ml-2 h-5 w-5" />
             </button>
           </div>
@@ -119,7 +127,10 @@ export default function LoveReportPage() {
             </div>
 
             <div className="mt-8">
-              <button className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-md font-bold flex items-center transition-transform hover:scale-105">
+              <button
+                onClick={handleNavigate}
+                className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-md font-bold flex items-center transition-transform hover:scale-105"
+              >
                 Get My Love Report Now <Heart className="ml-2 h-5 w-5" />
               </button>
             </div>
@@ -137,7 +148,10 @@ export default function LoveReportPage() {
               </span>
             </h2>
             <p className="mb-6 text-lg">Talk to our Expert Astrologer</p>
-            <button className="bg-white cursor-pointer text-red-600 hover:bg-pink-100 px-6 py-3 rounded-md font-bold transition-transform hover:scale-105">
+            <button
+              onClick={handleNavigate}
+              className="bg-white cursor-pointer text-red-600 hover:bg-pink-100 px-6 py-3 rounded-md font-bold transition-transform hover:scale-105"
+            >
               Get your Love Report
             </button>
           </div>
@@ -320,7 +334,10 @@ export default function LoveReportPage() {
             </div>
 
             <div className="mt-8">
-              <button className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-md font-bold flex items-center transition-transform hover:scale-105">
+              <button
+                onClick={handleNavigate}
+                className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-md font-bold flex items-center transition-transform hover:scale-105"
+              >
                 Get My Love Report Now <Heart className="ml-2 h-5 w-5" />
               </button>
             </div>
@@ -348,7 +365,9 @@ export default function LoveReportPage() {
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             <span className="text-red-600 text-4xl">Love Deserves Clarity</span>
             <br />
-            <span className="text-black">Get Your Love Report Now!</span>
+            <button onClick={handleNavigate} className="text-black">
+              Get Your Love Report Now!
+            </button>
           </h2>
 
           <p className="mb-8 text-black text-lg">
@@ -356,7 +375,10 @@ export default function LoveReportPage() {
             connection
           </p>
 
-          <button className="bg-white cursor-pointer text-red-600 hover:bg-pink-100 px-8 py-4 rounded-md font-bold text-lg transition-transform hover:scale-105">
+          <button
+            onClick={handleNavigate}
+            className="bg-white cursor-pointer text-red-600 hover:bg-pink-100 px-8 py-4 rounded-md font-bold text-lg transition-transform hover:scale-105"
+          >
             Get Your Love Report
           </button>
         </div>
@@ -364,7 +386,10 @@ export default function LoveReportPage() {
 
       {/* Sticky CTA */}
       <div className="fixed bottom-0 left-0 right-0 bg-red-600 py-3 px-4 text-center z-50">
-        <button className="bg-white text-red-600 hover:bg-pink-100 px-6 py-2 rounded-md font-bold transition-transform hover:scale-105">
+        <button
+          onClick={handleNavigate}
+          className="bg-white text-red-600 hover:bg-pink-100 px-6 py-2 rounded-md font-bold transition-transform hover:scale-105"
+        >
           Order Now
           {/* <span className="line-through">₹1399</span>{" "}
           <span className="text-red-600">₹499</span> */}

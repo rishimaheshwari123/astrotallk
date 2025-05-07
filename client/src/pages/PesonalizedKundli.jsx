@@ -1,7 +1,12 @@
 import { ChevronDown } from "lucide-react";
 import book from "../assets/kundli/book.webp";
 import instuction from "../assets/couple/instruction.png";
+import { useNavigate } from "react-router-dom";
 export default function PesonalizedKundli() {
+  const navitage = useNavigate();
+  const handleNavigate = () => {
+    navitage("/gemstone");
+  };
   return (
     <div className="min-h-screen bg-[#fff5f0]">
       {/* Hero Section */}
@@ -39,7 +44,10 @@ export default function PesonalizedKundli() {
                 </div>
               </div>
             </div>
-            <button className="bg-[#800909] cursor-pointer hover:bg-[#6a0606] text-white px-6 py-3 rounded-md font-medium flex items-center gap-2">
+            <button
+              onClick={handleNavigate}
+              className="bg-[#800909] cursor-pointer hover:bg-[#6a0606] text-white px-6 py-3 rounded-md font-medium flex items-center gap-2"
+            >
               BUY PERSONALISED JANAM KUNDLI
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -275,7 +283,10 @@ export default function PesonalizedKundli() {
               team is working diligently to ensure timely and accurate delivery.
             </p>
 
-            <button className="bg-[#ff5c16] cursor-pointer hover:bg-[#e04e0f] text-white px-8 py-3 rounded-md font-medium">
+            <button
+              onClick={handleNavigate}
+              className="bg-[#ff5c16] cursor-pointer hover:bg-[#e04e0f] text-white px-8 py-3 rounded-md font-medium"
+            >
               BUY YOUR PERSONALIZED KUNDLI
             </button>
           </div>
@@ -293,7 +304,10 @@ export default function PesonalizedKundli() {
               You Through It!
             </h2>
           </div>
-          <button className="bg-gradient-to-r cursor-pointer from-[#F3DF89] to-[#F5C116] hover:from-[#F5C116] hover:to-[#F3DF89] text-[#800909] px-6 py-3 rounded-md font-medium">
+          <button
+            onClick={handleNavigate}
+            className="bg-gradient-to-r cursor-pointer from-[#F3DF89] to-[#F5C116] hover:from-[#F5C116] hover:to-[#F3DF89] text-[#800909] px-6 py-3 rounded-md font-medium"
+          >
             Claim My Kundali Report + Consultation Offer
           </button>
         </div>

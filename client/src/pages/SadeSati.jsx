@@ -7,7 +7,12 @@ import bg from "../assets/sadesati/sadesati.png";
 import book from "../assets/sadesati/book.webp";
 import basic from "../assets/sadesati/basic.webp";
 import plus from "../assets/sadesati/plus.webp";
+import { useNavigate } from "react-router-dom";
 export default function SadeSatiPage() {
+  const navitage = useNavigate();
+  const handleNavigate = () => {
+    navitage("/gemstone");
+  };
   return (
     <main className="min-h-screen  text-white relative overflow-hidden">
       <section className="relative h-[60vh] md:h-auto flex items-center">
@@ -53,7 +58,10 @@ export default function SadeSatiPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6 }}
               >
-                <button className="bg-gradient-to-r cursor-pointer from-amber-500 to-yellow-600 text-black font-semibold py-2.5 sm:py-3 px-6 sm:px-8 rounded-md text-base sm:text-lg hover:from-amber-600 hover:to-yellow-700 transition-all">
+                <button
+                  onClick={handleNavigate}
+                  className="bg-gradient-to-r cursor-pointer from-amber-500 to-yellow-600 text-black font-semibold py-2.5 sm:py-3 px-6 sm:px-8 rounded-md text-base sm:text-lg hover:from-amber-600 hover:to-yellow-700 transition-all"
+                >
                   Order Your Report Now
                 </button>
               </motion.div>
@@ -157,7 +165,10 @@ export default function SadeSatiPage() {
                 </li>
               </ul>
 
-              <button className="bg-gradient-to-r from-amber-500 to-yellow-600 text-black font-bold py-3 px-8 rounded-md text-lg hover:from-amber-600 hover:to-yellow-700 transition-all">
+              <button
+                onClick={handleNavigate}
+                className="bg-gradient-to-r from-amber-500 to-yellow-600 text-black font-bold py-3 px-8 rounded-md text-lg hover:from-amber-600 hover:to-yellow-700 transition-all"
+              >
                 Get your personalized Sade Sati Report now and take charge of
                 your life today!
               </button>
@@ -265,7 +276,10 @@ export default function SadeSatiPage() {
           </div>
 
           <div className="mt-12 text-center">
-            <button className="bg-gradient-to-r cursor-pointer from-amber-500 to-yellow-600 text-black font-bold py-3 px-8 rounded-md text-lg hover:from-amber-600 hover:to-yellow-700 transition-all">
+            <button
+              onClick={handleNavigate}
+              className="bg-gradient-to-r cursor-pointer from-amber-500 to-yellow-600 text-black font-bold py-3 px-8 rounded-md text-lg hover:from-amber-600 hover:to-yellow-700 transition-all"
+            >
               Order Your Report Now
             </button>
           </div>
@@ -399,7 +413,10 @@ export default function SadeSatiPage() {
                   </p> */}
                 </div>
                 <div className="text-center">
-                  <button className="bg-gradient-to-r cursor-pointer from-amber-500 to-yellow-600 text-black font-bold py-3 px-8 rounded-md text-lg hover:from-amber-600 hover:to-yellow-700 transition-all w-full">
+                  <button
+                    onClick={handleNavigate}
+                    className="bg-gradient-to-r cursor-pointer from-amber-500 to-yellow-600 text-black font-bold py-3 px-8 rounded-md text-lg hover:from-amber-600 hover:to-yellow-700 transition-all w-full"
+                  >
                     BUY NOW
                   </button>
                 </div>
@@ -434,7 +451,10 @@ export default function SadeSatiPage() {
                   </p> */}
                 </div>
                 <div className="text-center">
-                  <button className="bg-gradient-to-r cursor-pointer from-amber-500 to-yellow-600 text-black font-bold py-3 px-8 rounded-md text-lg hover:from-amber-600 hover:to-yellow-700 transition-all w-full">
+                  <button
+                    onClick={handleNavigate}
+                    className="bg-gradient-to-r cursor-pointer from-amber-500 to-yellow-600 text-black font-bold py-3 px-8 rounded-md text-lg hover:from-amber-600 hover:to-yellow-700 transition-all w-full"
+                  >
                     BUY NOW
                   </button>
                 </div>
@@ -502,7 +522,10 @@ export default function SadeSatiPage() {
           </div>
 
           <div className="mt-12 text-center">
-            <button className="bg-gradient-to-r cursor-pointer from-amber-500 to-yellow-600 text-black font-bold py-3 px-8 rounded-md text-lg hover:from-amber-600 hover:to-yellow-700 transition-all">
+            <button
+              onClick={handleNavigate}
+              className="bg-gradient-to-r cursor-pointer from-amber-500 to-yellow-600 text-black font-bold py-3 px-8 rounded-md text-lg hover:from-amber-600 hover:to-yellow-700 transition-all"
+            >
               Order Your Report Now
             </button>
           </div>

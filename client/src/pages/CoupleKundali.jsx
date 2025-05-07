@@ -4,12 +4,18 @@ import { ChevronDown, ChevronUp, Check, Star } from "lucide-react";
 import HeroSection from "../components/core/couple/HeroSection";
 import Instruction from "../components/core/couple/Instruction";
 import price from "../assets/couple/price.webp";
+import { useNavigate } from "react-router-dom";
 
 export default function CoupleKundali() {
   const [activeAccordion, setActiveAccordion] = useState(0);
 
   const toggleAccordion = (index) => {
     setActiveAccordion(activeAccordion === index ? null : index);
+  };
+
+  const navitage = useNavigate();
+  const handleNavigate = () => {
+    navitage("/gemstone");
   };
 
   const faqs = [
@@ -45,7 +51,7 @@ export default function CoupleKundali() {
     {
       question: "Can Kundali Matching be done online?",
       answer:
-        "Yes, you can avail our kundli matching report online through astroarunpandit.org, where Kundali Matching can be done by analysing the birth details of the bride and groom.",
+        "Yes, you can avail our kundli matching report online through Jyotish Gyani.org, where Kundali Matching can be done by analysing the birth details of the bride and groom.",
     },
   ];
 
@@ -225,7 +231,7 @@ export default function CoupleKundali() {
         >
           <div className="bg-maroon-900 rounded-lg p-8 text-center shadow-xl">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              <span className="line-through">₹999</span> ₹511/- Only
+              {/* <s/pan className="line-through">₹999</span> ₹511/- Only */}
             </h2>
 
             <div className="flex flex-wrap justify-center gap-6 mb-8">
@@ -243,7 +249,10 @@ export default function CoupleKundali() {
               </div>
             </div>
 
-            <button className="bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 px-8 rounded-md transition duration-300 ease-in-out transform hover:scale-105 uppercase">
+            <button
+              onClick={handleNavigate}
+              className="bg-amber-500 hover:bg-amber-600 text-white font-bold py-3 px-8 rounded-md transition duration-300 ease-in-out transform hover:scale-105 uppercase"
+            >
               Buy Your Couple Matchmaking Kundali
             </button>
           </div>

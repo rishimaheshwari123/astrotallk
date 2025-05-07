@@ -43,7 +43,7 @@ const Instruction = () => {
 
               <div className="mt-8">
                 <a
-                  href="#buy-now"
+                  href="/gemstone"
                   className="inline-block bg-red-800 hover:bg-red-900 text-white font-bold py-3 px-8 rounded-md transition duration-300 ease-in-out transform hover:scale-105"
                 >
                   Get Your Premium Personalized Kundali Matching

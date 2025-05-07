@@ -1,6 +1,8 @@
 import React, { useState, useRef } from "react";
 import { FaBars, FaTimes, FaChevronDown } from "react-icons/fa";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { logoutAPI } from "../../services/operations/auth";
 
 const navLinks = [
   {
@@ -52,9 +54,10 @@ const navLinks = [
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState(null);
-  const [openMobileSubMenu, setOpenMobileSubMenu] = useState(null); // New state
+  const [openMobileSubMenu, setOpenMobileSubMenu] = useState(null);
   const dropdownRef = useRef(null);
-
+  const { token, user } = useSelector((state) => state.auth);
+  const dipatch = useDispatch();
   const toggleDropdown = (label) => {
     setOpenDropdown(openDropdown === label ? null : label);
   };
@@ -63,12 +66,14 @@ const Navbar = () => {
     setOpenMobileSubMenu(openMobileSubMenu === label ? null : label);
   };
 
-  const Logo = () => <div className="text-xl font-bold text-red-600">Logo</div>;
+  const handleLogout = () => {
+    dipatch(logoutAPI());
+  };
 
   return (
     <>
-      <nav className="bg-white shadow-md fixed top-20  w-full z-50">
-        <div className="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+      <nav className="bg-white shadow-md fixed top-20 w-full z-50">
+        <div className="max-w-11/12 mx-auto px-4 py-3 flex justify-between items-center">
           <div className="lg:hidden flex items-center">{/* <Logo /> */}</div>
 
           <ul className="hidden lg:flex gap-8 font-medium text-gray-700 items-center">
@@ -117,6 +122,49 @@ const Navbar = () => {
                   </Link>
                 </li>
               )
+            )}
+
+            {/* Additional Pages */}
+            {token ? (
+              <>
+                <li>
+                  <Link
+                    to="/my-orders"
+                    className="hover:text-red-600 transition-colors"
+                  >
+                    My Order
+                  </Link>
+                </li>
+
+                {user?.role === "admin" && (
+                  <li>
+                    <Link
+                      to="/admin/dashboard"
+                      className="hover:text-red-600 transition-colors"
+                    >
+                      Admin Dashboard
+                    </Link>
+                  </li>
+                )}
+
+                <li>
+                  <button
+                    onClick={handleLogout}
+                    className="hover:text-red-600 cursor-pointer transition-colors"
+                  >
+                    Logout
+                  </button>
+                </li>
+              </>
+            ) : (
+              <li>
+                <Link
+                  to="/login"
+                  className="hover:text-red-600 transition-colors"
+                >
+                  Login
+                </Link>
+              </li>
             )}
           </ul>
 
@@ -181,6 +229,52 @@ const Navbar = () => {
                     </Link>
                   </li>
                 )
+              )}
+
+              {/* Additional Pages - Mobile */}
+              {token ? (
+                <>
+                  <li>
+                    <Link
+                      to="/my-orders"
+                      className="font-semibold block hover:text-red-600 transition-colors"
+                      onClick={() => setMobileOpen(false)}
+                    >
+                      My Order
+                    </Link>
+                  </li>
+                  {user?.role === "admin" && (
+                    <li>
+                      <Link
+                        to="/admin/dashboard"
+                        className="hover:text-red-600 transition-colors"
+                      >
+                        Admin Dashboard
+                      </Link>
+                    </li>
+                  )}
+                  <li>
+                    <button
+                      onClick={() => {
+                        handleLogout();
+                        setMobileOpen(false);
+                      }}
+                      className="font-semibold block hover:text-red-600 transition-colors"
+                    >
+                      Logout
+                    </button>
+                  </li>
+                </>
+              ) : (
+                <li>
+                  <Link
+                    to="/login"
+                    className="font-semibold block hover:text-red-600 transition-colors"
+                    onClick={() => setMobileOpen(false)}
+                  >
+                    Login
+                  </Link>
+                </li>
               )}
             </ul>
           </div>

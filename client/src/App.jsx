@@ -1,9 +1,11 @@
 import React from "react";
+import { Route, Routes, useLocation } from "react-router-dom";
+import { useSelector } from "react-redux";
+
 import Navbar from "./components/common/Navbar";
 import Subbar from "./components/common/Subbar";
-import { Route, Routes } from "react-router-dom";
-import Home from "./pages/Home";
 import Footer from "./components/common/Footer";
+import Home from "./pages/Home";
 import CoupleKundali from "./pages/CoupleKundali";
 import SadeSatiPage from "./pages/SadeSati";
 import LoveReportPage from "./pages/LoveReportPage";
@@ -13,15 +15,33 @@ import CollaboratePage from "./pages/Collabration";
 import About from "./pages/About";
 import CustomerSupport from "./pages/CustomerSupport";
 import WeeklyHoroscope from "./components/core/horoscop/Test";
+import Gemstone from "./pages/Gemstone";
+import OpenRoute from "./components/admin/auth/OpenRoute";
+import PrivateRoute from "./components/admin/auth/PrivateRoute";
+import Register from "./pages/Register";
+import Login from "./pages/Login";
+import PaymentSuccess from "./pages/PaymentSuccess";
+import MyOrders from "./pages/MyOrders";
+import Layout from "./components/admin/pages/Layout";
+import Dashboard from "./components/admin/pages/Dashboard";
+import Orders from "./components/admin/pages/Orders";
+import Appoinment from "./pages/Appoinment";
+import GetAllAppointment from "./components/admin/pages/GetAllAppointment";
 
 const App = () => {
+  const { user } = useSelector((state) => state.auth);
+  const location = useLocation();
+  const isAdminRoute = location.pathname.startsWith("/admin");
+
   return (
     <div>
-      <Subbar />
-      <Navbar />
+      {!isAdminRoute && <Subbar />}
+      {!isAdminRoute && <Navbar />}
+
       <Routes>
         <Route path="/" element={<Home />} />
-        {/* reports  */}
+        <Route path="/appointment" element={<Appoinment />} />
+        {/* reports */}
         <Route
           path="/reports/premium-personalized-kundli"
           element={<CoupleKundali />}
@@ -36,12 +56,84 @@ const App = () => {
         <Route path="/collaborations" element={<CollaboratePage />} />
         <Route path="/about" element={<About />} />
         <Route path="/support" element={<CustomerSupport />} />
+        <Route path="/gemstone" element={<Gemstone />} />
         <Route
           path="/horoscope/weekly-horoscope"
           element={<WeeklyHoroscope />}
         />
+
+        <Route
+          path="/register"
+          element={
+            <OpenRoute>
+              <Register />
+            </OpenRoute>
+          }
+        />
+        <Route
+          path="/login"
+          element={
+            <OpenRoute>
+              <Login />
+            </OpenRoute>
+          }
+        />
+        <Route
+          path="/payment-success"
+          element={
+            <PrivateRoute>
+              <PaymentSuccess />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/my-orders"
+          element={
+            <PrivateRoute>
+              <MyOrders />
+            </PrivateRoute>
+          }
+        />
+
+        {/* admin routes */}
+        {user?.role === "admin" && (
+          <Route
+            path="/admin"
+            element={
+              <PrivateRoute>
+                <Layout />
+              </PrivateRoute>
+            }
+          >
+            <Route
+              path="/admin/dashboard"
+              element={
+                <PrivateRoute>
+                  <Dashboard />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path="/admin/orders"
+              element={
+                <PrivateRoute>
+                  <Orders />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path="/admin/appointment"
+              element={
+                <PrivateRoute>
+                  <GetAllAppointment />
+                </PrivateRoute>
+              }
+            />
+          </Route>
+        )}
       </Routes>
-      <Footer />
+
+      {!isAdminRoute && <Footer />}
     </div>
   );
 };
