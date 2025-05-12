@@ -29,6 +29,10 @@ import GetAllAppointment from "./components/admin/pages/GetAllAppointment";
 import WeeklyHoroscope from "./pages/WeeklyHoroscope";
 import WeeklyDetail from "./pages/WeeklyDetail";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import LoveHoroscope from "./pages/LoveHoroscope";
+import LoveDetail from "./pages/LoveDetail";
+import YearlyHoroscope from "./pages/YearlyHoroscope";
+import YearlyDetail from "./pages/YearlyDetail";
 
 const App = () => {
   const { user } = useSelector((state) => state.auth);
@@ -67,6 +71,22 @@ const App = () => {
           <Route
             path="/horoscope/weekly-horoscope/:sign"
             element={<WeeklyDetail />}
+          />
+          <Route
+            path="/horoscope/weekly-love-horoscope"
+            element={<LoveHoroscope />}
+          />
+          <Route
+            path="/horoscope/weekly-love-horoscope/:sign"
+            element={<LoveDetail />}
+          />
+          <Route
+            path="/horoscope/yearly-horoscope"
+            element={<YearlyHoroscope />}
+          />
+          <Route
+            path="/horoscope/yearly-horoscope/:sign"
+            element={<YearlyDetail />}
           />
 
           <Route
