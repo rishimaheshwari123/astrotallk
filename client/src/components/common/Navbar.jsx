@@ -32,10 +32,7 @@ const navLinks = [
         tag: "New",
         link: "/horoscope/weekly-horoscope",
       },
-      {
-        name: " Weekly Love Horoscope",
-        link: "/horoscope/weekly-love-horoscope",
-      },
+
       {
         name: " Weekly Love Horoscope",
         link: "/horoscope/weekly-love-horoscope",
