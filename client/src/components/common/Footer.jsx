@@ -114,7 +114,7 @@ const Footer = () => {
         </div>
 
         <div className="text-center mt-8">
-          <p className="text-sm">Privacy Policy | Terms of Service</p>
+          <p className="text-sm">All rights reserved by @ Jyotish Gyani </p>
         </div>
       </div>
     </footer>

@@ -1,6 +1,58 @@
+import { useState } from "react";
 import backgroundImage from "../assets/call/bg.png";
+import Swal from "sweetalert2";
+import axios from "axios";
 
 export default function CustomerSupport() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    contact: "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    Swal.fire({
+      title: "Loading...",
+      text: "Please wait while we process your request.",
+      allowOutsideClick: false,
+      didOpen: () => {
+        Swal.showLoading();
+      },
+    });
+
+    try {
+      const response = await axios.post(
+        `${import.meta.env.VITE_APP_BASE_URL}/contact/create`,
+        formData
+      );
+
+      if (response?.data) {
+        Swal.fire({
+          title: "Good job!",
+          text: "Your message has been sent successfully!",
+          icon: "success",
+        });
+      }
+      setFormData({ name: "", email: "", contact: "", message: "" });
+    } catch (error) {
+      console.log(error);
+      Swal.fire({
+        title: "Error!",
+        text: "There was a problem sending your message. Please try again later.",
+        icon: "error",
+      });
+    }
+  };
+
   return (
     <>
       <section className="relative h-[400px] md:h-[500px] overflow-hidden">
@@ -100,7 +152,7 @@ export default function CustomerSupport() {
                 <h3 className="mb-6 text-2xl font-semibold text-gray-900">
                   Send Us a Message
                 </h3>
-                <form className="space-y-6">
+                <form className="space-y-6" onSubmit={handleSubmit}>
                   <div className="grid gap-6 md:grid-cols-2">
                     <div className="space-y-2">
                       <label
@@ -112,9 +164,12 @@ export default function CustomerSupport() {
                       <input
                         id="name"
                         type="text"
+                        name="name"
                         placeholder="Enter Your Name"
                         required
                         className="w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 shadow-sm focus:border-cyan-500 focus:outline-none focus:ring-cyan-500 sm:text-sm"
+                        value={formData.name}
+                        onChange={handleChange}
                       />
                     </div>
                     <div className="space-y-2">
@@ -127,41 +182,31 @@ export default function CustomerSupport() {
                       <input
                         id="email"
                         type="email"
+                        name="email"
                         placeholder="Enter Your Email"
                         required
                         className="w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 shadow-sm focus:border-cyan-500 focus:outline-none focus:ring-cyan-500 sm:text-sm"
+                        value={formData.email}
+                        onChange={handleChange}
                       />
                     </div>
                   </div>
 
                   <div className="space-y-2">
                     <label
-                      htmlFor="phone"
+                      htmlFor="contact"
                       className="text-sm font-medium text-gray-700"
                     >
                       Phone Number
                     </label>
                     <input
-                      id="phone"
+                      id="contact"
+                      name="contact"
                       type="tel"
                       placeholder="Enter Your Phone Number"
                       className="w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 shadow-sm focus:border-cyan-500 focus:outline-none focus:ring-cyan-500 sm:text-sm"
-                    />
-                  </div>
-
-                  <div className="space-y-2">
-                    <label
-                      htmlFor="subject"
-                      className="text-sm font-medium text-gray-700"
-                    >
-                      Subject
-                    </label>
-                    <input
-                      id="subject"
-                      type="text"
-                      placeholder="Product Inquiry"
-                      required
-                      className="w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 shadow-sm focus:border-cyan-500 focus:outline-none focus:ring-cyan-500 sm:text-sm"
+                      value={formData.contact}
+                      onChange={handleChange}
                     />
                   </div>
 
@@ -174,16 +219,19 @@ export default function CustomerSupport() {
                     </label>
                     <textarea
                       id="message"
+                      name="message"
                       placeholder="Your message here..."
                       rows={5}
                       required
                       className="w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 shadow-sm focus:border-cyan-500 focus:outline-none focus:ring-cyan-500 sm:text-sm"
+                      value={formData.message}
+                      onChange={handleChange}
                     ></textarea>
                   </div>
 
                   <button
                     type="submit"
-                    className="w-full rounded-md bg-red-500 px-5 py-3 text-sm font-medium text-white shadow-sm hover:bg-cyan-600 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2"
+                    className="w-full cursor-pointer rounded-md bg-red-500 px-5 py-3 text-sm font-medium text-white shadow-sm hover:bg-cyan-600 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2"
                   >
                     Send Message
                   </button>

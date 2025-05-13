@@ -29,6 +29,7 @@ app.use(cors({
 app.use("/api/v1/auth", require("./routes/authRoute"))
 app.use("/api/v1/razorpay", require("./routes/razorpayRoute"))
 app.use("/api/v1/order", require("./routes/orderRoute"))
+app.use("/api/v1/contact", require("./routes/contactRoute"))
 
 
 

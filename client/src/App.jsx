@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
 
@@ -33,15 +33,27 @@ import LoveHoroscope from "./pages/LoveHoroscope";
 import LoveDetail from "./pages/LoveDetail";
 import YearlyHoroscope from "./pages/YearlyHoroscope";
 import YearlyDetail from "./pages/YearlyDetail";
+import ContactModal from "./components/common/ContactModal";
 
 const App = () => {
   const { user } = useSelector((state) => state.auth);
   const location = useLocation();
   const isAdminRoute = location.pathname.startsWith("/admin");
   const queryClient = new QueryClient();
+  const [showModal, setShowModal] = useState(false);
+
+  useEffect(() => {
+    setShowModal(true);
+  }, []);
+
+  const handleClose = () => {
+    setShowModal(false);
+  };
 
   return (
     <div>
+      {showModal && <ContactModal onClose={handleClose} />}
+
       {!isAdminRoute && <Subbar />}
       {!isAdminRoute && <Navbar />}
       <QueryClientProvider client={queryClient}>

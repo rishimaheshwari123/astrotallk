@@ -4,11 +4,11 @@ import { Link } from "react-router-dom";
 import logo from "../../assets/logo.png";
 const Subbar = () => {
   return (
-    <div className="bg-gradient-to-r from-red-700 to-red-800 text-white  px-4 fixed top-0 left-0 w-full z-50">
+    <div className="bg-[#ff5c16] text-white  px-4 fixed top-0 left-0 w-full z-50">
       <div className="flex items-center justify-between max-w-7xl mx-auto">
-        <div className="flex items-center gap-4">
+        <Link to={"/"} className="flex items-center gap-4">
           <img src={logo} alt="Arya Samaj Logo" className="w-24  " />
-        </div>
+        </Link>
         <div className="flex items-center gap-4">
           <div className="flex space-x-4">
             <Link
