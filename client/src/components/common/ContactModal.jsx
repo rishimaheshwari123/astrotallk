@@ -54,11 +54,20 @@ const ContactModal = ({ onClose }) => {
       });
     }
   };
+
   return (
     <div className="fixed inset-0 z-[99999999] flex items-center justify-center bg-black/40 bg-opacity-50">
-      <div className="bg-white rounded-lg w-full max-w-4xl flex flex-col md:flex-row overflow-hidden">
+      <div className="bg-white rounded-lg w-full max-w-4xl h-[80vh] flex flex-col md:flex-row overflow-y-auto relative">
+        {/* Close Button */}
+        <button
+          onClick={onClose}
+          className="absolute top-2 right-2 cursor-pointer text-red-600 text-3xl font-bold z-10"
+        >
+          &times;
+        </button>
+
         {/* Left Image */}
-        <div className="w-full md:w-1/2 h-64 md:h-auto">
+        <div className="w-full md:w-1/2 h-auto">
           <img
             src={panditji}
             alt="Popup"
@@ -67,13 +76,7 @@ const ContactModal = ({ onClose }) => {
         </div>
 
         {/* Right Form */}
-        <div className="w-full md:w-1/2 p-6 bg-red-100 relative">
-          <button
-            onClick={onClose}
-            className="absolute cursor-pointer top-0 right-2 text-red-600 font-bold text-3xl"
-          >
-            &times;
-          </button>
+        <div className="w-full md:w-1/2 p-6 bg-red-100">
           <h2 className="text-2xl font-bold mb-4 text-red-700">Contact Us</h2>
           <form className="space-y-4" onSubmit={handleSubmit}>
             <div className="flex items-center bg-white rounded px-3 py-2 shadow">
