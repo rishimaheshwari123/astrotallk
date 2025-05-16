@@ -32,7 +32,7 @@ export default function FAQ() {
 
   return (
     <section className="w-full py-12 md:py-24 bg-[#800909] text-white">
-      <div className="container px-4 md:px-6">
+      <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-10">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
             FREQUENTLY ASKED QUESTIONS
