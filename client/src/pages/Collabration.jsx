@@ -156,7 +156,7 @@ export default function CollaboratePage() {
                   </svg>
                 </Link>
                 <Link
-                  to="https://www.facebook"
+                  to="https://www.facebook.com/share/1AWKLMtcSx/?mibextid=qi2Omg"
                   className="bg-white p-2 rounded-full text-orange-600 hover:bg-gray-100"
                 >
                   <span className="sr-only">Facebook</span>
