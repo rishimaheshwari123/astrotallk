@@ -49,8 +49,8 @@ export default function SadeSatiPage() {
                 className="text-base sm:text-lg md:text-xl mb-6 sm:mb-8 leading-relaxed text-white"
               >
                 Believe it or not, Sade Sati could be the reason for your life
-                going south! Find out how in Astro Arun Pandit's personalized
-                Sade Sati Report.
+                going south! Find out how in Jyotish Gyani's personalized Sade
+                Sati Report.
               </motion.p>
 
               <motion.div
@@ -514,7 +514,7 @@ export default function SadeSatiPage() {
                 Take consultation
               </h3>
               <p>
-                You'll have support from Astro Arun Pandit, ensuring you're not
+                You'll have support from Jyotish Gyani, ensuring you're not
                 alone during this time. Your questions can be answered for up to
                 30 days after you receive your report.
               </p>

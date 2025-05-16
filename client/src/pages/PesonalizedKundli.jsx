@@ -409,7 +409,7 @@ export default function PesonalizedKundli() {
             </div>
             <div className="bg-orange-50 p-6 rounded-lg shadow">
               <p className="text-gray-700 mb-4">
-                I started following Astro Arun Pandit on instagram and I also
+                I started following Jyotish Gyani on instagram and I also
                 ordered personalized premium kundli for myself. I got detailed
                 information and I have also been told about the problems that I
                 was facing and will face in the future. To find solutions of the

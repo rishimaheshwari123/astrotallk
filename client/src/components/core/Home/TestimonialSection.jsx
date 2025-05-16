@@ -7,7 +7,7 @@ import bgImg from "../../../assets/servicebg.webp"; // use your uploaded image p
 const testimonials = [
   {
     title: "Finance Analysis Report",
-    text: "I got a report from Arun Pandit Ji about my finances for the next 5 years. It’s been really...",
+    text: "I got a report from Jyotish Gyani Ji about my finances for the next 5 years. It’s been really...",
     name: "Shivam",
   },
   {
@@ -17,7 +17,7 @@ const testimonials = [
   },
   {
     title: "Call Consultation",
-    text: "I recently had a call consultation with Astro Arun Pandit... His advice and insights were on point...",
+    text: "I recently had a call consultation with Jyotish Gyani... His advice and insights were on point...",
     name: "Sonali",
   },
   {

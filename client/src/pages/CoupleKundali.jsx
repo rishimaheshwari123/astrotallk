@@ -57,11 +57,11 @@ export default function CoupleKundali() {
 
   const testimonials = [
     {
-      text: "Mujhe astro arun pandit ji ki banai hui couple kundali se apne married life ke bare Mai bhot si chize milli or kya kar sakte hai Pata chala.",
+      text: "Mujhe Jyotish Gyani ji ki banai hui couple kundali se apne married life ke bare Mai bhot si chize milli or kya kar sakte hai Pata chala.",
       author: "Rachna Singh",
     },
     {
-      text: "I started following Astro Arun pandit on youtube and recently I have ordered a couple of kundali in-depth analyses, it helped me to know many things, about myself and my wife to improve our married life.",
+      text: "I started following Jyotish Gyani on youtube and recently I have ordered a couple of kundali in-depth analyses, it helped me to know many things, about myself and my wife to improve our married life.",
       author: "Kalpana Verma",
     },
     {

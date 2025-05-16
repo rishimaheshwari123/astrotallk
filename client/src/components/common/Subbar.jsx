@@ -63,7 +63,7 @@ const Subbar = () => {
               </svg>
             </Link>
             <Link
-              to="https://twitter.com"
+              to="https://www.threads.com/@jyotish_gyani?xmt=AQF0mpzy0E2Dyn0uWUWqFWRIjcIm1SAZ14CCor4ZUjZ3Ozc"
               className="bg-white p-2 rounded-full text-orange-600 hover:bg-gray-100"
             >
               <span className="sr-only">Twitter</span>

@@ -62,7 +62,7 @@ export default function CollaboratePage() {
             <CollaborationCard
               title="Keynote Speaker"
               icon={<Mic className="h-8 w-8 text-orange-500" />}
-              description="Over the past years, Astrologer Arun Pandit studied the mantras of successful businesses which have turned their passion into purpose."
+              description="Over the past years, Astrologer Jyotish Gyani studied the mantras of successful businesses which have turned their passion into purpose."
               additionalText="He treasures talking about the creative and authentic ways to inculcate Astro-Spirituality in our daily lifestyle as a secret of your extraordinary success."
               actionText="Get In Touch"
             />
@@ -87,8 +87,8 @@ export default function CollaboratePage() {
             </h2>
             <p className="text-gray-700 mb-6">
               If you are a NGO, NPO or if you are individually working for a
-              cause, Astro Arun Pandit will be honored to help you spread your
-              words among the masses.
+              cause, Jyotish Gyani will be honored to help you spread your words
+              among the masses.
             </p>
             <Link
               to="#collaborate-form"
@@ -110,7 +110,7 @@ export default function CollaboratePage() {
             <div>
               <h2 className="text-3xl font-bold mb-6">TO Invite -</h2>
               <h3 className="text-2xl font-semibold mb-8">
-                Astro Arun Pandit as Keynote Speaker, or for any type of
+                Jyotish Gyani as Keynote Speaker, or for any type of
                 collaboration.
               </h3>
               <Link
@@ -174,7 +174,7 @@ export default function CollaboratePage() {
                   </svg>
                 </Link>
                 <Link
-                  to="https://twitter.com"
+                  to="https://www.threads.com/@jyotish_gyani?xmt=AQF0mpzy0E2Dyn0uWUWqFWRIjcIm1SAZ14CCor4ZUjZ3Ozc"
                   className="bg-white p-2 rounded-full text-orange-600 hover:bg-gray-100"
                 >
                   <span className="sr-only">Twitter</span>
