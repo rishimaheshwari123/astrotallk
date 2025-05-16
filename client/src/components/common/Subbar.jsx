@@ -45,7 +45,7 @@ const Subbar = () => {
               </svg>
             </Link>
             <Link
-              to="https://www.facebook.com/astrvishalacharya/?ref=pages_you_manage"
+              to="https://www.facebook"
               className="bg-white p-2 rounded-full text-orange-600 hover:bg-gray-100"
             >
               <span className="sr-only">Facebook</span>
