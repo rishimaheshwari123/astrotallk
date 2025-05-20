@@ -30,7 +30,7 @@ const HeroSection = () => {
                       <span className="text-2xl">😊</span>
                     </div>
                     <div>
-                      <p className="text-xl font-bold">1 lakh+</p>
+                      <p className="text-xl font-bold">5 lakh+</p>
                       <p>Happy Customers</p>
                     </div>
                   </div>

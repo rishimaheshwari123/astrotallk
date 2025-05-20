@@ -30,8 +30,8 @@ export default function PesonalizedKundli() {
                   <span className="text-2xl">😊</span>
                 </div>
                 <div>
-                  <p className="font-medium">1.2 lakh+</p>
-                  <p className="text-sm">Astroparivar kundli members</p>
+                  <p className="font-medium">5 lakh+</p>
+                  <p className="text-sm">Satisfied Customer</p>
                 </div>
               </div>
               <div className="flex items-center gap-2">

@@ -4,12 +4,12 @@ export default function StatsCounter() {
   const stats = [
     {
       icon: <Calendar className="h-8 w-8" />,
-      value: "50",
+      value: "21",
       label: "Years of Legacy",
     },
     {
       icon: <Users className="h-8 w-8" />,
-      value: "100K+",
+      value: "500K+",
       label: "Worldwide Clients",
     },
     {
