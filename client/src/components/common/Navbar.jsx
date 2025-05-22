@@ -160,7 +160,7 @@ const Navbar = () => {
 
           <div className=" flex items-center">
             <LanguageSelector />
-            <button onClick={() => setMobileOpen(!mobileOpen)} className="ml-4">
+            <button onClick={() => setMobileOpen(!mobileOpen)} className="lg:hidden ml-4">
               {mobileOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
             </button>
           </div>
