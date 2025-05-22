@@ -1,33 +1,68 @@
 "use client"
+import { useState, useEffect } from "react"
 import { useTranslation } from "react-i18next"
+import { Globe, Languages, ChevronDown } from "lucide-react"
 
 const LanguageSelector = () => {
-  const { i18n, t } = useTranslation()
+  const { i18n } = useTranslation()
+  const [dropdownOpen, setDropdownOpen] = useState(false)
+  const [selectedLang, setSelectedLang] = useState("en")
+
+  const languages = [
+    {
+      code: "en",
+      label: "English",
+      icon: "🇬🇧",
+    },
+    {
+      code: "hi",
+      label: "हिन्दी",
+      icon: "🇮🇳",
+    },
+  ]
+
+  useEffect(() => {
+    const savedLang = localStorage.getItem("language") || "en"
+    setSelectedLang(savedLang)
+    i18n.changeLanguage(savedLang)
+  }, [i18n])
 
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng)
-    // Save the language preference to localStorage
+    setSelectedLang(lng)
     localStorage.setItem("language", lng)
+    setDropdownOpen(false)
   }
 
   return (
-    <div className="flex items-center gap-2">
+    <div className="relative inline-block text-left">
       <button
-        onClick={() => changeLanguage("en")}
-        className={`px-2 py-1 rounded ${
-          i18n.language === "en" ? "bg-red-600 text-white" : "bg-gray-200 text-gray-700"
-        }`}
+        onClick={() => setDropdownOpen(!dropdownOpen)}
+        className="flex items-center gap-2 px-4 py-2 bg-gray-100 text-gray-700 rounded-md shadow hover:bg-gray-200 transition-all duration-200"
       >
-        {t("languageSelector.english")}
+        <Languages className="w-5 h-5" />
+        <span className="hidden sm:inline">{languages.find(l => l.code === selectedLang)?.label}</span>
+        <ChevronDown className="w-4 h-4" />
       </button>
-      <button
-        onClick={() => changeLanguage("hi")}
-        className={`px-2 py-1 rounded ${
-          i18n.language === "hi" ? "bg-red-600 text-white" : "bg-gray-200 text-gray-700"
-        }`}
-      >
-        {t("languageSelector.hindi")}
-      </button>
+
+      {dropdownOpen && (
+        <div className="absolute z-10 mt-2 w-40 bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5">
+          <div className="py-1">
+            {languages.map((lang) => (
+              <button
+                key={lang.code}
+                onClick={() => changeLanguage(lang.code)}
+                className={`flex items-center w-full px-4 py-2 text-sm hover:bg-gray-100 ${
+                  selectedLang === lang.code ? "bg-gray-200 font-semibold" : ""
+                }`}
+              >
+                <span className="mr-2">{lang.icon}</span>
+                {lang.label}
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   )
 }
