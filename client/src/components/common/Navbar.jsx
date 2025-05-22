@@ -1,71 +1,76 @@
-import React, { useState, useRef } from "react";
-import { FaBars, FaTimes, FaChevronDown } from "react-icons/fa";
-import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
-import { logoutAPI } from "../../services/operations/auth";
+"use client"
 
-const navLinks = [
-  {
-    label: "Reports",
-    link: "/reports",
-    dropdown: [
-      { name: "Sade Sati Report", tag: "New", link: "/reports/sade-sati" },
-      { name: "Love Report", tag: "New", link: "/reports/love" },
-      {
-        name: "Premium Personalized Kundali",
-        link: "/reports/premium-personalized-kundli",
-      },
-      {
-        name: "Premium Couple Kundali",
-        link: "/reports/premium-couple-kundli",
-      },
-    ],
-  },
-  { label: "Call Consultation", link: "/call-consultation" },
-  { label: "Gemstone", link: "/gemstone" },
-  {
-    label: "Horoscope",
-    link: "/horoscope",
-    dropdown: [
-      {
-        name: " Weekly Horoscope",
-        tag: "New",
-        link: "/horoscope/weekly-horoscope",
-      },
-
-      {
-        name: " Weekly Love Horoscope",
-        link: "/horoscope/weekly-love-horoscope",
-      },
-      {
-        name: "  Yearly Horoscope",
-        link: "/horoscope/yearly-horoscope",
-      },
-    ],
-  },
-  { label: "Collaborations", link: "/collaborations" },
-  { label: "About", link: "/about" },
-  { label: "Customer Support", link: "/support" },
-];
+import { useState, useRef } from "react"
+import { FaBars, FaTimes, FaChevronDown } from "react-icons/fa"
+import { useDispatch, useSelector } from "react-redux"
+import { Link } from "react-router-dom"
+import { logoutAPI } from "../../services/operations/auth"
+import { useTranslation } from "react-i18next"
+import LanguageSelector from "./LanguageSelector"
 
 const Navbar = () => {
-  const [mobileOpen, setMobileOpen] = useState(false);
-  const [openDropdown, setOpenDropdown] = useState(null);
-  const [openMobileSubMenu, setOpenMobileSubMenu] = useState(null);
-  const dropdownRef = useRef(null);
-  const { token, user } = useSelector((state) => state.auth);
-  const dipatch = useDispatch();
+  const [mobileOpen, setMobileOpen] = useState(false)
+  const [openDropdown, setOpenDropdown] = useState(null)
+  const [openMobileSubMenu, setOpenMobileSubMenu] = useState(null)
+  const dropdownRef = useRef(null)
+  const { token, user } = useSelector((state) => state.auth)
+  const dispatch = useDispatch()
+  const { t } = useTranslation()
+
+  const navLinks = [
+    {
+      label: t("navbar.reports"),
+      link: "/reports",
+      dropdown: [
+        { name: t("navbar.sadeSati"), tag: "New", link: "/reports/sade-sati" },
+        { name: t("navbar.loveReport"), tag: "New", link: "/reports/love" },
+        {
+          name: t("navbar.personalizedKundli"),
+          link: "/reports/premium-personalized-kundli",
+        },
+        {
+          name: t("navbar.coupleKundli"),
+          link: "/reports/premium-couple-kundli",
+        },
+      ],
+    },
+    { label: t("navbar.callConsultation"), link: "/call-consultation" },
+    { label: t("navbar.gemstone"), link: "/gemstone" },
+    {
+      label: t("navbar.horoscope"),
+      link: "/horoscope",
+      dropdown: [
+        {
+          name: t("navbar.weeklyHoroscope"),
+          tag: "New",
+          link: "/horoscope/weekly-horoscope",
+        },
+        {
+          name: t("navbar.weeklyLoveHoroscope"),
+          link: "/horoscope/weekly-love-horoscope",
+        },
+        {
+          name: t("navbar.yearlyHoroscope"),
+          link: "/horoscope/yearly-horoscope",
+        },
+      ],
+    },
+    { label: t("navbar.collaborations"), link: "/collaborations" },
+    { label: t("navbar.about"), link: "/about" },
+    { label: t("navbar.customerSupport"), link: "/support" },
+  ]
+
   const toggleDropdown = (label) => {
-    setOpenDropdown(openDropdown === label ? null : label);
-  };
+    setOpenDropdown(openDropdown === label ? null : label)
+  }
 
   const toggleMobileSubMenu = (label) => {
-    setOpenMobileSubMenu(openMobileSubMenu === label ? null : label);
-  };
+    setOpenMobileSubMenu(openMobileSubMenu === label ? null : label)
+  }
 
   const handleLogout = () => {
-    dipatch(logoutAPI());
-  };
+    dispatch(logoutAPI())
+  }
 
   return (
     <>
@@ -74,6 +79,12 @@ const Navbar = () => {
           <div className="lg:hidden flex items-center">{/* <Logo /> */}</div>
 
           <ul className="hidden lg:flex gap-8 font-medium text-gray-700 items-center">
+            <li>
+              <Link to="/" className="hover:text-red-600 transition-colors whitespace-nowrap">
+                {t("navbar.home")}
+              </Link>
+            </li>
+
             {navLinks.map((link, index) =>
               link.dropdown ? (
                 <li
@@ -89,9 +100,7 @@ const Navbar = () => {
                   <ul
                     ref={dropdownRef}
                     className={`absolute left-0 top-4 mt-2 bg-white shadow-lg rounded-md w-72 z-50 ${
-                      openDropdown === link.label
-                        ? "block"
-                        : "hidden group-hover:block"
+                      openDropdown === link.label ? "block" : "hidden group-hover:block"
                     }`}
                   >
                     {link.dropdown.map((item, i) => (
@@ -100,72 +109,59 @@ const Navbar = () => {
                         className="px-4 py-2 hover:bg-gray-100 flex justify-between items-center text-sm whitespace-nowrap"
                       >
                         <Link to={item.link}>{item.name}</Link>
-                        {item.tag && (
-                          <span className="text-red-500 text-xs">
-                            {item.tag}
-                          </span>
-                        )}
+                        {item.tag && <span className="text-red-500 text-xs">{item.tag}</span>}
                       </li>
                     ))}
                   </ul>
                 </li>
               ) : (
                 <li key={index}>
-                  <Link
-                    to={link.link}
-                    className="hover:text-red-600 transition-colors whitespace-nowrap"
-                  >
+                  <Link to={link.link} className="hover:text-red-600 transition-colors whitespace-nowrap">
                     {link.label}
                   </Link>
                 </li>
-              )
+              ),
             )}
 
             {/* Additional Pages */}
             {token ? (
               <>
                 <li>
-                  <Link
-                    to="/my-orders"
-                    className="hover:text-red-600 transition-colors"
-                  >
-                    My Order
+                  <Link to="/my-orders" className="hover:text-red-600 transition-colors">
+                    {t("navbar.myOrder")}
                   </Link>
                 </li>
 
                 {user?.role === "admin" && (
                   <li>
-                    <Link
-                      to="/admin/dashboard"
-                      className="hover:text-red-600 transition-colors"
-                    >
-                      Admin Dashboard
+                    <Link to="/admin/dashboard" className="hover:text-red-600 transition-colors">
+                      {t("navbar.adminDashboard")}
                     </Link>
                   </li>
                 )}
 
                 <li>
-                  <button
-                    onClick={handleLogout}
-                    className="hover:text-red-600 cursor-pointer transition-colors"
-                  >
-                    Logout
+                  <button onClick={handleLogout} className="hover:text-red-600 cursor-pointer transition-colors">
+                    {t("navbar.logout")}
                   </button>
                 </li>
               </>
             ) : (
               <li>
-                <Link
-                  to="/login"
-                  className="hover:text-red-600 transition-colors"
-                >
-                  Login
+                <Link to="/login" className="hover:text-red-600 transition-colors">
+                  {t("navbar.login")}
                 </Link>
               </li>
             )}
+
+            {/* Language Selector */}
+            <li>
+              <LanguageSelector />
+            </li>
           </ul>
 
           <div className="lg:hidden flex items-center">
+            <LanguageSelector />
             <button onClick={() => setMobileOpen(!mobileOpen)} className="ml-4">
               {mobileOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
             </button>
@@ -183,6 +179,16 @@ const Navbar = () => {
               </button>
             </div>
             <ul className="space-y-3">
+              <li>
+                <Link
+                  to="/"
+                  className="font-semibold block hover:text-red-600 transition-colors"
+                  onClick={() => setMobileOpen(false)}
+                >
+                  {t("navbar.home")}
+                </Link>
+              </li>
+
               {navLinks.map((link, index) =>
                 link.dropdown ? (
                   <li key={index}>
@@ -191,25 +197,16 @@ const Navbar = () => {
                       onClick={() => toggleMobileSubMenu(link.label)}
                     >
                       <span>{link.label}</span>
-                      <span>
-                        {openMobileSubMenu === link.label ? "▲" : "▼"}
-                      </span>
+                      <span>{openMobileSubMenu === link.label ? "▲" : "▼"}</span>
                     </div>
                     {openMobileSubMenu === link.label && (
                       <ul className="pl-4 mt-1 space-y-1">
                         {link.dropdown.map((item, i) => (
                           <li key={i} className="text-sm">
-                            <Link
-                              to={item.link}
-                              onClick={() => setMobileOpen(false)}
-                            >
+                            <Link to={item.link} onClick={() => setMobileOpen(false)}>
                               {item.name}
                             </Link>
-                            {item.tag && (
-                              <span className="text-red-500 text-xs">
-                                {item.tag}
-                              </span>
-                            )}
+                            {item.tag && <span className="text-red-500 text-xs">{item.tag}</span>}
                           </li>
                         ))}
                       </ul>
@@ -225,7 +222,7 @@ const Navbar = () => {
                       {link.label}
                     </Link>
                   </li>
-                )
+                ),
               )}
 
               {/* Additional Pages - Mobile */}
@@ -237,28 +234,25 @@ const Navbar = () => {
                       className="font-semibold block hover:text-red-600 transition-colors"
                       onClick={() => setMobileOpen(false)}
                     >
-                      My Order
+                      {t("navbar.myOrder")}
                     </Link>
                   </li>
                   {user?.role === "admin" && (
                     <li>
-                      <Link
-                        to="/admin/dashboard"
-                        className="hover:text-red-600 transition-colors"
-                      >
-                        Admin Dashboard
+                      <Link to="/admin/dashboard" className="hover:text-red-600 transition-colors">
+                        {t("navbar.adminDashboard")}
                       </Link>
                     </li>
                   )}
                   <li>
                     <button
                       onClick={() => {
-                        handleLogout();
-                        setMobileOpen(false);
+                        handleLogout()
+                        setMobileOpen(false)
                       }}
                       className="font-semibold block hover:text-red-600 transition-colors"
                     >
-                      Logout
+                      {t("navbar.logout")}
                     </button>
                   </li>
                 </>
@@ -269,7 +263,7 @@ const Navbar = () => {
                     className="font-semibold block hover:text-red-600 transition-colors"
                     onClick={() => setMobileOpen(false)}
                   >
-                    Login
+                    {t("navbar.login")}
                   </Link>
                 </li>
               )}
@@ -278,7 +272,7 @@ const Navbar = () => {
         </div>
       )}
     </>
-  );
-};
+  )
+}
 
-export default Navbar;
+export default Navbar

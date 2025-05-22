@@ -1,26 +1,46 @@
 import React, { useState } from "react";
 
-export default function FAQ() {
+export default function FAQ({ isHindi }) {
   const faqs = [
     {
-      question: "How will we book our consultation call?",
-      answer:
-        "You will receive a link that allows you to access the astrologer's schedule and choose from the available time slot when he is available. From there, you can choose a suitable time to book your call. Additionally, a confirmation email will be sent to provide you with the call details.",
+      question: {
+        en: "How will we book our consultation call?",
+        hi: "हम अपनी सलाहकार कॉल कैसे बुक करेंगे?",
+      },
+      answer: {
+        en: "You will receive a link that allows you to access the astrologer's schedule and choose from the available time slot when he is available. From there, you can choose a suitable time to book your call. Additionally, a confirmation email will be sent to provide you with the call details.",
+        hi: "आपको एक लिंक मिलेगा जो ज्योतिषी के शेड्यूल तक पहुंचने और उपलब्ध समय स्लॉट चुनने की अनुमति देता है। वहां से, आप अपनी कॉल बुक करने के लिए एक उपयुक्त समय चुन सकते हैं। इसके अलावा, कॉल विवरण के साथ एक पुष्टि ईमेल भेजा जाएगा।",
+      },
     },
     {
-      question: "How many days will it require to book our consultation call?",
-      answer:
-        "Your consultation call will be scheduled after payment. All Slots are booked till April 2025. (All Calls will be booked after April on the next available date on the calendar.) If you booked urgent call service- The call will be booked on the next available date on the calendar.",
+      question: {
+        en: "How many days will it require to book our consultation call?",
+        hi: "हमारी सलाहकार कॉल बुक करने में कितने दिन लगेंगे?",
+      },
+      answer: {
+        en: "Your consultation call will be scheduled after payment. All Slots are booked till April 2025. (All Calls will be booked after April on the next available date on the calendar.) If you booked urgent call service- The call will be booked on the next available date on the calendar.",
+        hi: "आपकी सलाहकार कॉल भुगतान के बाद निर्धारित की जाएगी। सभी स्लॉट अप्रैल 2025 तक बुक हैं। (सभी कॉल अप्रैल के बाद कैलेंडर पर अगले उपलब्ध दिनांक पर बुक होंगी।) यदि आपने अर्जेंट कॉल सेवा बुक की है तो कॉल अगले उपलब्ध दिनांक पर बुक की जाएगी।",
+      },
     },
     {
-      question: "Does the payment need to be made before having the call?",
-      answer:
-        "Certainly, you'll need to complete the payment through online banking in advance, and once that's done, we'll proceed to schedule your call with the astrologer.",
+      question: {
+        en: "Does the payment need to be made before having the call?",
+        hi: "क्या कॉल से पहले भुगतान करना आवश्यक है?",
+      },
+      answer: {
+        en: "Certainly, you'll need to complete the payment through online banking in advance, and once that's done, we'll proceed to schedule your call with the astrologer.",
+        hi: "बिल्कुल, आपको पहले ऑनलाइन बैंकिंग के माध्यम से भुगतान करना होगा, और इसके बाद हम आपकी कॉल ज्योतिषी के साथ निर्धारित करेंगे।",
+      },
     },
     {
-      question: "What are the benefits of booking a consultation call?",
-      answer:
-        "Our astrologer is highly renowned, known for transforming the lives of countless individuals worldwide. Choosing to book a consultation call can pave the way for a successful life, just as he has done for thousands of others.",
+      question: {
+        en: "What are the benefits of booking a consultation call?",
+        hi: "सलाहकार कॉल बुक करने के क्या लाभ हैं?",
+      },
+      answer: {
+        en: "Our astrologer is highly renowned, known for transforming the lives of countless individuals worldwide. Choosing to book a consultation call can pave the way for a successful life, just as he has done for thousands of others.",
+        hi: "हमारा ज्योतिषी बहुत प्रसिद्ध है, जो विश्वभर के अनगिनत लोगों के जीवन को बदल चुका है। सलाहकार कॉल बुक करना एक सफल जीवन के रास्ते खोल सकता है, जैसे उसने हजारों लोगों के लिए किया है।",
+      },
     },
   ];
 
@@ -35,7 +55,7 @@ export default function FAQ() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-10">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-            FREQUENTLY ASKED QUESTIONS
+            {isHindi ? "अक्सर पूछे जाने वाले प्रश्न" : "FREQUENTLY ASKED QUESTIONS"}
           </h2>
           <div className="w-24 h-1 bg-amber-500 mx-auto my-4"></div>
         </div>
@@ -49,7 +69,7 @@ export default function FAQ() {
                 aria-expanded={openIndex === index}
                 aria-controls={`faq-content-${index}`}
               >
-                <span>{faq.question}</span>
+                <span>{isHindi ? faq.question.hi : faq.question.en}</span>
                 <svg
                   className={`w-4 h-4 transition-transform ${
                     openIndex === index ? "rotate-180" : ""
@@ -70,11 +90,13 @@ export default function FAQ() {
               <div
                 id={`faq-content-${index}`}
                 className={`overflow-hidden transition-max-h duration-300 ease-in-out ${
-                  openIndex === index ? "max-h-40" : "max-h-0" // Adjust max-h as needed
+                  openIndex === index ? "max-h-40" : "max-h-0"
                 }`}
-                style={{ maxHeight: openIndex === index ? "1000px" : "0px" }} // Fallback for browsers not supporting max-h transition
+                style={{ maxHeight: openIndex === index ? "1000px" : "0px" }}
               >
-                <div className="py-2 text-white/80">{faq.answer}</div>
+                <div className="py-2 text-white/80">
+                  {isHindi ? faq.answer.hi : faq.answer.en}
+                </div>
               </div>
             </div>
           ))}
