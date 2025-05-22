@@ -155,7 +155,9 @@ const Navbar = () => {
             )}
 
             {/* Language Selector */}
-        
+            <li>
+              <LanguageSelector />
+            </li>
           </ul>
 
           <div className="lg:hidden flex items-center">
