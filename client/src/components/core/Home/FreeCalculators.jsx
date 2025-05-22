@@ -4,6 +4,7 @@ import kundaliImg from "../../../assets/kundli.svg"
 import moonImg from "../../../assets/moon.svg"
 import bgImage from "../../../assets/servicebg.webp"
 import { useTranslation } from "react-i18next"
+import { Link } from "react-router-dom"
 
 const FreeCalculators = ({ title }) => {
   const { i18n } = useTranslation()
@@ -46,7 +47,9 @@ const FreeCalculators = ({ title }) => {
               <h3 className="text-lg font-semibold text-red-800">{card.title}</h3>
               <p className="text-sm text-gray-700 mb-3">{card.desc}</p>
               <button className="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded">
+            <Link to="/horoscope/weekly-horoscope">
                 {isHindi ? "अभी पाएं" : "Get it Now"}
+            </Link>
               </button>
             </div>
           </div>
