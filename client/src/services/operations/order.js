@@ -179,8 +179,3 @@ export const deleteProductAPI = (id, token) => {
         }
     };
 };
-
-
-
-
-

@@ -1,0 +1,244 @@
+{
+  "navbar": {
+    "home": "Home",
+    "reports": "Reports",
+    "sadeSati": "Sade Sati Report",
+    "loveReport": "Love Report",
+    "personalizedKundli": "Premium Personalized Kundali",
+    "coupleKundli": "Premium Couple Kundali",
+    "callConsultation": "Call Consultation",
+    "gemstone": "Gemstone",
+    "horoscope": "Horoscope",
+    "weeklyHoroscope": "Weekly Horoscope",
+    "weeklyLoveHoroscope": "Weekly Love Horoscope",
+    "yearlyHoroscope": "Yearly Horoscope",
+    "collaborations": "Collaborations",
+    "about": "About",
+    "customerSupport": "Customer Support",
+    "myOrder": "My Order",
+    "adminDashboard": "Admin Dashboard",
+    "login": "Login",
+    "logout": "Logout"
+  },
+  "footer": {
+    "quickLinks": "Quick Links",
+    "followUs": "Follow Us",
+    "contactUs": "Contact Us",
+    "allRightsReserved": "All rights reserved by @ Jyotish Gyani"
+  },
+  "home": {
+    "services": "Our Services",
+    "freeCalculators": "Free Calculators",
+    "happyClientTestimonials": "Happy Client Testimonials",
+    "frequentlyAskedQuestions": "Frequently Asked Questions"
+  },
+  "callConsultation": {
+    "title": "Talk to Astrologer for Call Consultation!",
+    "subtitle": "30 minutes, Ask anything, Get solutions to all your life problems",
+    "bookNow": "Book your consultation call now",
+    "happyCustomers": "Happy Customers",
+    "accuratePredictions": "Accurate Predictions",
+    "solutions": "Best Life Changing Solutions in Just One Call",
+    "solutionsDesc": "Who would have thought that the answers to your life's challenges lie in a single call with the right person? Out of all the calls you make in your life, only a few can really help solve your problems.",
+    "bookYourCall": "Book Your Call Now",
+    "importantNotes": "Important Notes",
+    "oneTimeService": "One time service",
+    "timeDuration": "Time duration - 30 min",
+    "support": "7 days support"
+  },
+  "coupleKundali": {
+    "title": "Kundali Milan | Kundali Matching | Horoscope Matching For Marriage",
+    "subtitle": "(Find Your Perfect Match With Couple Match Making Kundali)",
+    "happyCustomers": "Happy Customers",
+    "accuratePredictions": "Accurate Predictions",
+    "orderNow": "Order Now Premium Personalised Kundli Matching",
+    "unlockMaritalHarmony": "Unlock Marital Harmony with Kundali Matching by Jyotish Gyani",
+    "unlockSubtitle": "(Find Your Compatible Life Partner with Accurate Kundali Milan)",
+    "marriageDescription": "Marriage is a significant milestone in life. In Hindu traditions, Kundali Matching plays a crucial role in ensuring that couples are compatible. Through Gun Milan, astrological charts determine how well two individuals align, bringing love, respect, and lasting happiness to their marriage. This ancient tradition helps to lay the foundation for a blissful married life, making it a must for Hindu weddings."
+  },
+  "loveReport": {
+    "title": "Let Universe Guide Your Love Life",
+    "subtitle": "This Special Love Report will reveal your love compatibility, relationship strengths, and future predictions, helping you create a deeper, more meaningful connection.",
+    "getReport": "Get My Love Report Now",
+    "whatsInside": "What's Inside Your Love Report?",
+    "lovePersonality": "Your Love Personality",
+    "compatibilityInsights": "Compatibility Insights",
+    "strengthsChallenges": "Strengths & Challenges",
+    "loveRemedies": "Love Remedies & Solutions",
+    "futurePredictions": "Future Love Predictions"
+  },
+  "sadeSati": {
+    "title": "Is Life Throwing One Obstacle After Another At You?",
+    "subtitle": "Believe it or not, Sade Sati could be the reason for your life going south! Find out how in Jyotish Gyani's personalized Sade Sati Report.",
+    "orderNow": "Order Your Report Now",
+    "whatIsSadeSati": "What Is Sade Sati Report?",
+    "sadeSatiDesc": "Sade Sati is a significant astrological period in Vedic astrology that spans approximately 7.5 years. It begins when Saturn (Shani) transits over your natal moon sign, influencing various aspects of your life. This period is divided into three phases, each lasting around 2.5 years:"
+  },
+  "personalizedKundli": {
+    "title": "Discover Your Future with Online Janam Kundli Report!",
+    "subtitle": "Unveil your life path & resolve struggles – Love, Money, Health & more with Kundali by date & time of birth",
+    "receiveKundli": "You will receive your Premium Personalized Kundli online i.e. in e-book format in 5 working days.",
+    "satisfiedCustomer": "Satisfied Customer",
+    "unlock": "Unlock",
+    "accuratePredictions": "Accurate Predictions",
+    "buyKundli": "BUY PERSONALISED JANAM KUNDLI"
+  },
+  "gemstone": {
+    "title": "Gemstone Products",
+    "buyNow": "Buy Now"
+  },
+  "about": {
+    "title": "About Jyotish Gyani",
+    "description": "Welcome to Jyotish Gyani, your trusted guide into the profound world of Vedic astrology. We are a dedicated team of passionate individuals committed to illuminating your life's path through the ancient wisdom of Jyotish. Our mission is to empower you with self-understanding and foresight, helping you navigate life's complexities with clarity and confidence.",
+    "values": "At Jyotish Gyani, we deeply value the rich heritage and accuracy of Vedic astrology. We strive to provide you with insightful and personalized astrological guidance, drawing upon time-tested principles and modern interpretations. We believe in the power of this sacred knowledge to offer profound insights into your strengths, challenges, and opportunities.",
+    "exploreServices": "Explore Our Services",
+    "youtubeTitle": "Know More About Astrology And Numerology On Our Youtube Channel",
+    "subscribe": "Subscribe"
+  },
+  "login": {
+    "title": "Login",
+    "email": "Email Address",
+    "password": "Password",
+    "loginButton": "Login",
+    "noAccount": "Don't have an account?",
+    "register": "Register here"
+  },
+  "register": {
+    "title": "Create Account",
+    "fullName": "Full Name",
+    "email": "Email Address",
+    "password": "Password",
+    "location": "Location",
+    "signUp": "Sign Up",
+    "haveAccount": "Already have an account?",
+    "login": "Log in here"
+  },
+  "appointment": {
+    "title": "Book Your Appointment",
+    "whyBook": "Why Book with Astrotall?",
+    "features": [
+      "Personalized Vedic Astrology Consultation",
+      "Get Accurate Remedies for Life Issues",
+      "One-on-One Session with Certified Experts",
+      "Flexible Domestic & International Timings",
+      "Easy & Secure Online Payment"
+    ],
+    "fullName": "Full Name",
+    "phone": "Phone Number",
+    "email": "Email Address",
+    "address": "Full Address",
+    "pin": "PIN Code",
+    "location": "Location:",
+    "domestic": "Domestic",
+    "international": "International",
+    "bookButton": "Pay & Book Appointment"
+  },
+  "collaboration": {
+    "title": "Collaborate With Us",
+    "cta": "Let's make a difference together",
+    "howToCollaborate": "How to collaborate",
+    "youtubePodcast": "Youtube Podcast",
+    "keynoteSpeaker": "Keynote Speaker",
+    "instagramLive": "Instagram Live",
+    "ngoHelp": "Need Astro Arun's Help to spread your message?",
+    "ngoDesc": "If you are a NGO, NPO or if you are individually working for a cause, Jyotish Gyani will be honored to help you spread your words among the masses.",
+    "getInTouch": "Get In Touch",
+    "toInvite": "To invite -",
+    "inviteDesc": "Jyotish Gyani as Keynote Speaker, or for any type of collaboration.",
+    "downloadPortfolio": "Download Portfolio",
+    "awards": "Awards"
+  },
+  "customerSupport": {
+    "title": "Contact US",
+    "subtitle": "Get in touch with our team for inquiries, quotes, or support",
+    "getInTouch": "Get in Touch",
+    "contactInfo": "Contact Information",
+    "contactDesc": "We're here to help with any questions or inquiries you may have about our products and services. Feel free to reach out to us using any of the contact methods below.",
+    "phone": "Phone",
+    "email": "Email",
+    "businessHours": "Business Hours",
+    "sendMessage": "Send Us a Message",
+    "yourName": "Your Name",
+    "emailAddress": "Email Address",
+    "phoneNumber": "Phone Number",
+    "message": "Message",
+    "sendMessageButton": "Send Message"
+  },
+  "horoscope": {
+    "weeklyHoroscope": "Weekly Horoscope",
+    "weeklyDesc": "Explore your celestial forecast for the upcoming week",
+    "loveHoroscope": "Love Horoscope",
+    "loveDesc": "Discover what the stars reveal about your romantic life",
+    "yearlyHoroscope": "Yearly Horoscope",
+    "yearlyDesc": "Explore what this year has in store for you"
+  },
+  "myOrders": {
+    "title": "My Orders",
+    "noOrders": "No orders found.",
+    "orderId": "Order ID:",
+    "status": "Status:",
+    "totalAmount": "Total Amount:",
+    "paymentMethod": "Payment Method:",
+    "products": "Products:",
+    "title": "Title:",
+    "price": "Price:"
+  },
+  "paymentSuccess": {
+    "title": "Payment Successful!",
+    "message": "Your order has been placed successfully.",
+    "viewOrders": "View Orders"
+  },
+  "languageSelector": {
+    "english": "English",
+    "hindi": "हिंदी"
+  },
+ 
+  "services": {
+    "sadeSatiDesc": "Understand the impact of Saturn's transit and its effects on your life.",
+    "loveReportDesc": "Gain insights into your love life and relationships through astrology.",
+    "personalizedKundliDesc": "Get a detailed Kundali prepared based on your birth chart.",
+    "coupleKundliDesc": "Match Kundalis and understand compatibility with your partner.",
+    "callConsultationDesc": "Talk to experienced astrologers for personal guidance astrology.",
+    "gemstoneDesc": "Find the right gemstones to enhance your luck and remove doshas.",
+    "orderNow": "Order Now"
+  },
+   "whoIsThisFor": {
+    "title": "Who is This Love Report For?",
+    "singles": "Singles",
+    "singlesDesc": "Get clarity on your future love life",
+    "couples": "Couples",
+    "couplesDesc": "Strengthen your relationship with deeper insights",
+    "challenges": "Relationship Challenges?",
+    "challengesDesc": "Find solutions and improve your bond",
+    "confused": "Confused About Love?",
+    "confusedDesc": "Get answers to all your questions"
+  },
+  "whyChoose": {
+    "title": "Why Choose This Love Report?",
+    "personalized": "100% Personalized",
+    "personalizedDesc": "Based on your birth details",
+    "clearLanguage": "Clear & Simple Language",
+    "clearLanguageDesc": "No technical jargon",
+    "insightful": "Deep Insights",
+    "insightfulDesc": "About your love life and relationships",
+    "cta": "Get Your Love Report Now",
+    "imageAlt": "Love Hearts"
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "q1": {
+      "question": "What is a Love Report?",
+      "answer": "A detailed analysis based on your birth details to understand your love life."
+    },
+    "q2": {
+      "question": "How accurate is the report?",
+      "answer": "Our report is generated by experienced astrologers using proven methods."
+    },
+    "q3": {
+      "question": "Can couples benefit from this report?",
+      "answer": "Yes, it provides insights to strengthen your relationship."
+    }
+  }
+
+
+}

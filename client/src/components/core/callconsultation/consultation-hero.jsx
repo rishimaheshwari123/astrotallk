@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import heroBg from "../../../assets/call/bg.png";
-import videoBg from "../../../assets/call/hero.png"; // Import your video background image
+import videoBg from "../../../assets/call/hero.png";
 
-export default function ConsultationHero() {
+export default function ConsultationHero({ isHindi }) {
   return (
     <section
       className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-r from-amber-50 to-orange-50"
@@ -16,22 +16,26 @@ export default function ConsultationHero() {
         <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
           <div className="space-y-4">
             <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-[#800909]">
-              Talk to Astrologer for Call Consultation!
+              {isHindi
+                ? "कॉल कंसल्टेशन के लिए ज्योतिषी से बात करें!"
+                : "Talk to Astrologer for Call Consultation!"}
             </h1>
             <p className="text-lg font-medium">
               <strong>
-                30 minutes, Ask anything, Get solutions to all your life
-                problems
+                {isHindi
+                  ? "30 मिनट, कुछ भी पूछें, अपने जीवन की सभी समस्याओं का समाधान पाएं"
+                  : "30 minutes, Ask anything, Get solutions to all your life problems"}
               </strong>
             </p>
             <div className="bg-white p-4 rounded-lg shadow-sm">
               <p className="text-sm">
                 <strong>
-                  Your consultation call will be scheduled after payment. All
-                  Slots are booked till{" "}
+                  {isHindi
+                    ? "आपकी कंसल्टेशन कॉल भुगतान के बाद निर्धारित की जाएगी। सभी स्लॉट बुक हो चुके हैं"
+                    : "Your consultation call will be scheduled after payment. All Slots are booked till "}
                 </strong>
                 <span className="text-[#800000]">
-                  <strong>April 2025</strong>
+                  <strong>{isHindi ? "अप्रैल 2025" : "April 2025"}</strong>
                 </span>
               </p>
             </div>
@@ -40,7 +44,9 @@ export default function ConsultationHero() {
                 to="/appointment"
                 className="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-[#800909] hover:bg-[#600707] text-white px-4 py-2"
               >
-                Book your consultation call now
+                {isHindi
+                  ? "अपनी कंसल्टेशन कॉल अभी बुक करें"
+                  : "Book your consultation call now"}
               </Link>
             </div>
             <div className="flex flex-wrap gap-6 mt-6">
@@ -49,9 +55,11 @@ export default function ConsultationHero() {
                   <span className="text-amber-600">😊</span>
                 </div>
                 <div>
-                  <p className="text-sm font-medium">1.2 lakh+</p>
+                  <p className="text-sm font-medium">
+                    {isHindi ? "1.2 लाख+" : "1.2 lakh+"}
+                  </p>
                   <p className="text-xs text-muted-foreground">
-                    Happy Customers
+                    {isHindi ? "खुश ग्राहक" : "Happy Customers"}
                   </p>
                 </div>
               </div>
@@ -62,12 +70,13 @@ export default function ConsultationHero() {
                 <div>
                   <p className="text-sm font-medium">100%</p>
                   <p className="text-xs text-muted-foreground">
-                    Accurate Predictions
+                    {isHindi ? "सटीक भविष्यवाणियाँ" : "Accurate Predictions"}
                   </p>
                 </div>
               </div>
             </div>
           </div>
+
           <div className="relative aspect-video overflow-hidden rounded-xl flex items-center justify-center">
             {/* Video Background Image */}
             <div
@@ -76,16 +85,16 @@ export default function ConsultationHero() {
                 backgroundImage: `url(${videoBg})`,
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
-                width: "100%", // Make it fill the container width
-                height: "auto", // Adjust height to maintain aspect ratio
-                backgroundSize: "contain", // Ensure the whole image is visible
+                width: "100%",
+                height: "auto",
+                backgroundSize: "contain",
               }}
             ></div>
 
             {/* Video Player */}
             <iframe
-              width="61%" // Adjust as needed for the video player size
-              height="61%" // Adjust as needed for the video player size
+              width="61%"
+              height="61%"
               src="https://www.youtube.com/embed/zkIxJqBKDk8?si=JVXJu17tdthcGfwN"
               title="YouTube video player"
               frameBorder="0"

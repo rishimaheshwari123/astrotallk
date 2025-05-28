@@ -1,21 +1,21 @@
 import { Award, Calendar, Users } from "lucide-react";
 
-export default function StatsCounter() {
+export default function StatsCounter({ isHindi }) {
   const stats = [
     {
       icon: <Calendar className="h-8 w-8" />,
-      value: "50",
-      label: "Years of Legacy",
+      value: "21",
+      label: isHindi ? "विरासत के वर्ष" : "Years of Legacy",
     },
     {
       icon: <Users className="h-8 w-8" />,
-      value: "100K+",
-      label: "Worldwide Clients",
+      value: "500K+",
+      label: isHindi ? "विश्वव्यापी ग्राहक" : "Worldwide Clients",
     },
     {
       icon: <Award className="h-8 w-8" />,
       value: "15+",
-      label: "Awards In Astrology",
+      label: isHindi ? "ज्योतिष में पुरस्कार" : "Awards In Astrology",
     },
   ];
 

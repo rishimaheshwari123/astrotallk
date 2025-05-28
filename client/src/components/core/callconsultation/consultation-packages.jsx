@@ -1,47 +1,84 @@
-import { Phone, Video, CheckCircle, Clock, Headphones } from "lucide-react";
+import { Phone, CheckCircle, Clock, Headphones } from "lucide-react";
 import { Link } from "react-router-dom";
 import pandit from "../../../assets/call/panditji.png";
-export default function ConsultationPackages() {
+
+export default function ConsultationPackages({ isHindi }) {
   const packages = [
     {
-      title: "Astrologer Consultation",
-      subtitle: "Urgent Call - 30Min",
+      title: {
+        en: "Astrologer Consultation",
+        hi: "ज्योतिषी सलाह",
+      },
+      subtitle: {
+        en: "Urgent Call - 30Min",
+        hi: "आपातकालीन कॉल - 30 मिनट",
+      },
       audioPrice: "₹2,24,000/-",
       videoPrice: "₹2,34,000/-",
       image: pandit,
       audioLink: "https://example.com/book-audio",
       videoLink: "https://example.com/book-video",
-      note: "The slot will be booked within 5-7 days",
+      note: {
+        en: "The slot will be booked within 5-7 days",
+        hi: "स्लॉट 5-7 दिनों के भीतर बुक किया जाएगा",
+      },
     },
     {
-      title: "Couple Consultation",
-      subtitle: "30Min",
+      title: {
+        en: "Couple Consultation",
+        hi: "युगल सलाह",
+      },
+      subtitle: {
+        en: "30Min",
+        hi: "30 मिनट",
+      },
       audioPrice: "₹1,85,000/-",
       videoPrice: "₹1,95,000/-",
       image: pandit,
       audioLink: "https://example.com/book-audio-couple",
       videoLink: "https://example.com/book-video-couple",
-      note: "All Slots are booked till April 2025",
+      note: {
+        en: "All Slots are booked till April 2025",
+        hi: "सभी स्लॉट अप्रैल 2025 तक बुक हैं",
+      },
     },
     {
-      title: "Regular Consultation",
-      subtitle: "30Min",
+      title: {
+        en: "Regular Consultation",
+        hi: "नियमित सलाह",
+      },
+      subtitle: {
+        en: "30Min",
+        hi: "30 मिनट",
+      },
       audioPrice: "₹1,48,000/-",
       videoPrice: "₹1,58,000/-",
       image: pandit,
       audioLink: "https://example.com/book-audio-regular",
       videoLink: "https://example.com/book-video-regular",
-      note: "All Slots are booked till April 2025",
+      note: {
+        en: "All Slots are booked till April 2025",
+        hi: "सभी स्लॉट अप्रैल 2025 तक बुक हैं",
+      },
     },
     {
-      title: "Urgent Couple Consultation",
-      subtitle: "30Min",
+      title: {
+        en: "Urgent Couple Consultation",
+        hi: "आपातकालीन युगल सलाह",
+      },
+      subtitle: {
+        en: "30Min",
+        hi: "30 मिनट",
+      },
       audioPrice: "₹2,62,000/-",
       videoPrice: "₹2,72,000/-",
       image: pandit,
       audioLink: "https://example.com/book-audio-urgent-couple",
       videoLink: "https://example.com/book-video-urgent-couple",
-      note: "The slot will be booked within 5-7 days",
+      note: {
+        en: "The slot will be booked within 5-7 days",
+        hi: "स्लॉट 5-7 दिनों के भीतर बुक किया जाएगा",
+      },
     },
   ];
 
@@ -50,13 +87,15 @@ export default function ConsultationPackages() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-10">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-[#800909]">
-            Book Your Call Now
+            {isHindi
+              ? "अभी अपनी कॉल बुक करें"
+              : "Book Your Call Now"}
           </h2>
           <div className="w-24 h-1 bg-amber-500 mx-auto my-4"></div>
           <p className="text-muted-foreground md:text-lg max-w-3xl mx-auto">
-            Who would have imagined that a single call to the right person could
-            hold the solutions to all your life problems? With our astrologer,
-            one call has the potential to transform your life.
+            {isHindi
+              ? "कौन सोच सकता था कि सही व्यक्ति को एक कॉल आपके जीवन की सारी समस्याओं का समाधान हो सकती है? हमारे ज्योतिषी के साथ एक कॉल आपके जीवन को बदल सकती है।"
+              : "Who would have imagined that a single call to the right person could hold the solutions to all your life problems? With our astrologer, one call has the potential to transform your life."}
           </p>
         </div>
 
@@ -69,17 +108,17 @@ export default function ConsultationPackages() {
               <div className="flex justify-center mb-4">
                 <img
                   src={pkg.image || "/placeholder.svg"}
-                  alt={pkg.title}
+                  alt={isHindi ? pkg.title.hi : pkg.title.en}
                   width={150}
                   height={200}
                   className="rounded-lg"
                 />
               </div>
               <h3 className="text-xl font-bold text-center text-[#800909]">
-                {pkg.title}
+                {isHindi ? pkg.title.hi : pkg.title.en}
               </h3>
               <p className="text-center text-muted-foreground mb-4">
-                {pkg.subtitle}
+                {isHindi ? pkg.subtitle.hi : pkg.subtitle.en}
               </p>
 
               <div className="mt-auto space-y-3">
@@ -90,13 +129,13 @@ export default function ConsultationPackages() {
                   className="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-[#800909] hover:bg-[#600707] text-white w-full px-4 py-2"
                 >
                   <Phone className="mr-2 h-4 w-4" />
-                  Book Call
+                  {isHindi ? "कॉल बुक करें" : "Book Call"}
                 </Link>
 
                 <p className="text-xs text-center text-muted-foreground mt-2">
-                  Note: Your call is scheduled for 30 minutes
-                  <br />
-                  <strong>{pkg.note}</strong>
+                  {isHindi
+                    ? `नोट: आपकी कॉल 30 मिनट के लिए निर्धारित है।\n${pkg.note.hi}`
+                    : `Note: Your call is scheduled for 30 minutes.\n${pkg.note.en}`}
                 </p>
               </div>
             </div>
@@ -105,24 +144,33 @@ export default function ConsultationPackages() {
 
         <div className="mt-12 bg-white p-6 rounded-xl shadow-sm">
           <h3 className="text-xl font-bold text-center text-[#800909] uppercase mb-4">
-            Important Notes
+            {isHindi ? "महत्वपूर्ण नोट्स" : "Important Notes"}
           </h3>
           <ul className="space-y-2">
             <li className="flex items-start">
               <CheckCircle className="h-5 w-5 text-green-500 mr-2 mt-0.5" />
               <p>
-                After booking, you'll be assigned the next available slot. If
-                rescheduling occurs due to the astrologer's busy schedule, your
-                call remains a priority.
+                {isHindi
+                  ? "बुकिंग के बाद, आपको अगला उपलब्ध स्लॉट असाइन किया जाएगा। अगर ज्योतिषी के व्यस्त शेड्यूल के कारण पुनर्निर्धारण होता है, तो आपकी कॉल प्राथमिकता बनी रहेगी।"
+                  : "After booking, you'll be assigned the next available slot. If rescheduling occurs due to the astrologer's busy schedule, your call remains a priority."}
               </p>
             </li>
             <li className="flex items-start">
               <CheckCircle className="h-5 w-5 text-green-500 mr-2 mt-0.5" />
               <p>
                 <em>
-                  Your consultation call will be scheduled after payment. All
-                  Slots are booked till{" "}
-                  <span className="text-[#800000]">April 2025</span>
+                  {isHindi ? (
+                    <>
+                      आपकी सलाह कॉल भुगतान के बाद निर्धारित की जाएगी। सभी स्लॉट{" "}
+                      <span className="text-[#800000]">अप्रैल 2025</span> तक बुक हैं।
+                    </>
+                  ) : (
+                    <>
+                      Your consultation call will be scheduled after payment. All
+                      Slots are booked till{" "}
+                      <span className="text-[#800000]">April 2025</span>
+                    </>
+                  )}
                 </em>
               </p>
             </li>
@@ -131,11 +179,15 @@ export default function ConsultationPackages() {
               <p>
                 <strong>
                   <em>
-                    Note:{" "}
-                    <span className="text-[#800000]">
-                      This is a one-time consultation only. There is no refund
-                      policy after call booking.
-                    </span>
+                    {isHindi ? (
+                      <>
+                        नोट: <span className="text-[#800000]">यह एक बार की सलाह है। कॉल बुकिंग के बाद कोई रिफंड नीति नहीं है।</span>
+                      </>
+                    ) : (
+                      <>
+                        Note: <span className="text-[#800000]">This is a one-time consultation only. There is no refund policy after call booking.</span>
+                      </>
+                    )}
                   </em>
                 </strong>
               </p>
@@ -145,15 +197,15 @@ export default function ConsultationPackages() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6 p-4 bg-amber-50 rounded-lg">
             <div className="flex items-center justify-center">
               <Phone className="h-5 w-5 text-[#800909] mr-2" />
-              <span>One time service</span>
+              <span>{isHindi ? "एक बार सेवा" : "One time service"}</span>
             </div>
             <div className="flex items-center justify-center">
               <Clock className="h-5 w-5 text-[#800909] mr-2" />
-              <span>Time duration - 30 min</span>
+              <span>{isHindi ? "समय अवधि - 30 मिनट" : "Time duration - 30 min"}</span>
             </div>
             <div className="flex items-center justify-center">
               <Headphones className="h-5 w-5 text-[#800909] mr-2" />
-              <span>7 days support</span>
+              <span>{isHindi ? "7 दिनों का समर्थन" : "7 days support"}</span>
             </div>
           </div>
         </div>
