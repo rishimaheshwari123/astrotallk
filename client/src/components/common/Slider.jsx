@@ -33,10 +33,13 @@ const Slider = () => {
     },
     {
       id: 2,
-      image1:
-        "https://astroarunpandit.org/wp-content/uploads/2025/05/MH-Banner-Desktop.png",
-      image2:
-        "https://astroarunpandit.org/wp-content/uploads/2025/05/MH-Banner-Mobile.png",
+      image1: "/slider1I.png",
+      image2: "/slider1II.png",
+    },
+    {
+      id: 3,
+      image1: "/slider3I.png",
+      image2: "/slider3II.png",
     },
   ];
 
